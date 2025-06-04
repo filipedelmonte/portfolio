@@ -1,0 +1,24 @@
+---
+export interface Props {
+  href: string;
+  label: string;
+  icon: any;
+}
+
+const { href, label, icon: Icon } = Astro.props;
+---
+
+<a
+  href={href}
+  target={href.startsWith("mailto") ? "_self" : "_blank"}
+  class="group flex flex-row items-center gap-2 text-zinc-800 dark:text-zinc-100 transition-all hover:text-zinc-500"
+>
+  <span
+    class="transition-transform group-hover:scale-110 group-hover:-translate-y-0.5"
+  >
+    <Icon href={href} />
+  </span>
+  <span class="text-xs font-medium transition-all duration-200">
+    {label}
+  </span>
+</a>

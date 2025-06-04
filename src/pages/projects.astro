@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ProjectBlock from "../components/ProjectBlock.astro";
+---
+
+<MainLayout title="Projects - Filipe Lobo del Monte">
+  <div class="mb-10 max-w-2xl text-zinc-700 dark:text-zinc-300">
+    <!-- <h1 class="text-3xl font-bold mb-2">Projects</h1> -->
+    <p class="text-lg">
+      Some things I've been building lately. A mix of fun side projects, serious
+      experiments, and everything in between.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ProjectBlock
+      href="https://github.com/filipedelmonte/portfolio"
+      title="Portfolio Website"
+      description="A personal website built with Astro, Tailwind CSS, and Markdown."
+      tech={["Astro", "React", "Tailwind", "Markdown"]}
+    />
+  </div>
+</MainLayout>

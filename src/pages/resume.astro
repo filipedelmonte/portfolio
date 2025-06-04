@@ -1,0 +1,21 @@
+---
+import Prose from "../components/Prose.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Content } from "../content/resume.md";
+---
+
+<MainLayout title="Resume - Filipe Lobo del Monte">
+  <Prose>
+    <Content />
+  </Prose>
+
+  <p class="text-center mt-4">
+    <a
+      href="/public/CV.pdf"
+      target="_blank"
+      class="text-sm/6 font-semibold p-2 rounded-xl text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-50"
+    >
+      Download PDF
+    </a>
+  </p>
+</MainLayout>

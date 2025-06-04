@@ -1,25 +1,24 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<MainLayout title="About me - Filipe Lobo del Monte">
+  <div class="max-w-3xl">
+    <h1
+      class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+    >
+      Fullstack Software Engineer
+    </h1>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+    <p class="mt-10 text-base text-zinc-600 dark:text-zinc-400">
+      Hey! I'm <strong>Filipe</strong> — a software engineer from Brazil 🇧🇷, now
+      living in Zürich 🇨🇭.
+
+      <br />
+      <br />
+      Dad to an incredible little boy. I love coding, cold beer, funky bass lines,
+      and pretending I have free time to build side projects. This is me trying to
+      put some code online and maybe make something cool along the way.
+    </p>
+  </div>
+</MainLayout>

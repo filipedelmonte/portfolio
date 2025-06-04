@@ -1,0 +1,21 @@
+---
+export interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+const { pathname: currentPath } = Astro.url;
+
+const isActive = href === currentPath;
+---
+
+<a
+  href={href}
+  class="text-sm/6 font-semibold p-2 rounded-xl"
+  class:list={isActive
+    ? "text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-50"
+    : "text-zinc-800 dark:text-zinc-100 hover:bg-zinc-200"}
+>
+  {label}
+</a>

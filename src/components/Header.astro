@@ -1,0 +1,111 @@
+---
+import { Logo } from "./Logo";
+import NavItem from "./NavItem.astro";
+---
+
+<script>
+  const toggleFn = () => {
+    const menu = document.getElementById("mobile-menu");
+    if (menu) {
+      menu.classList.toggle("hidden");
+    }
+  };
+  const openButton = document.getElementById("mobile-menu-open-button");
+  const closeButton = document.getElementById("mobile-menu-close-button");
+  openButton?.addEventListener("click", toggleFn);
+  closeButton?.addEventListener("click", toggleFn);
+</script>
+
+<header>
+  <nav
+    class="mx-auto flex items-center justify-between p-6 lg:px-8"
+    aria-label="Global"
+  >
+    <Logo client:load />
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        id="mobile-menu-open-button"
+      >
+        <svg
+          class="size-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-6">
+      <NavItem href="/" label="About me" />
+      <NavItem href="/resume" label="Resume" />
+      <NavItem href="/projects" label="Projects" />
+    </div>
+  </nav>
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="fixed inset-0 z-10"></div>
+    <div
+      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+    >
+      <div class="flex items-center justify-between">
+        <Logo client:load />
+        <button
+          type="button"
+          class="-m-2.5 rounded-md p-2.5 text-gray-700"
+          id="mobile-menu-close-button"
+        >
+          <span class="sr-only">Close menu</span>
+          <svg
+            class="size-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            data-slot="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            <a
+              href="/"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >About me</a
+            >
+            <a
+              href="/resume"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >Resume</a
+            >
+            <a
+              href="/projects"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >Projects</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

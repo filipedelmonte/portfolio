@@ -1,0 +1,58 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { pallete as colorPallete } from "../lib/pallete";
+
+import "../styles/global.css";
+import { shuffle } from "../lib/utils";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const bgColors = shuffle(Object.values(colorPallete));
+---
+
+<script define:vars={{ bgColors }} is:inline>
+  let count = 0;
+
+  function setNextBackgroundColor() {
+    document.body.style.backgroundColor = bgColors[count % bgColors.length];
+    count++;
+  }
+
+  document.addEventListener("DOMContentLoaded", setNextBackgroundColor, {
+    once: true,
+  });
+
+  document.addEventListener("click", setNextBackgroundColor);
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg width='48' height='55.2' viewBox='0 0 100 115' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='50,5 95,32.5 50,60 5,32.5' fill='%23ca8cff' stroke='black' stroke-width='5' stroke-linejoin='round'%3E%3C/polygon%3E%3Cpolygon points='5,32.5 50,60 50,110 5,82.5' fill='%23fffb8a' stroke='black' stroke-width='5' stroke-linejoin='round'%3E%3C/polygon%3E%3Cpolygon points='95,32.5 50,60 50,110 95,82.5' fill='%23ff8496' stroke='black' stroke-width='5' stroke-linejoin='round'%3E%3C/polygon%3E%3C/svg%3E"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="p-3" id="background">
+    <!-- Header -->
+    <div
+      class="min-h-[calc(100vh-2rem)] border-4 border-zinc-900 bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 flex flex-col"
+    >
+      <Header />
+      <!-- Main Content -->
+      <main class="px-6 py-8">
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
