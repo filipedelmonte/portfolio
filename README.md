@@ -1,13 +1,45 @@
-# Astro with Tailwind
+# 🚀 Personal Portfolio Website
 
-```sh
-pnpm create astro@latest -- --template with-tailwindcss
+A sleek, fast, and fully responsive personal portfolio website built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and [React](https://reactjs.org/), and deployed seamlessly via [Netlify](https://www.netlify.com/).
+
+## ✨ Features
+
+- ⚡️ Blazing-fast performance with Astro's partial hydration
+- 🎨 Fully responsive and styled with Tailwind CSS
+- 🌐 Deployed with Netlify for continuous deployment
+- 📱 Mobile-first and accessible design
+- 🧩 Modular, reusable component architecture
+
+## 🔧 Tech Stack
+
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment**: [Netlify](https://www.netlify.com/)
+
+## 🖥️ Live Demo
+
+> 🌍 View live website on [https://lobodelmonte.dev](https://lobodelmonte.dev)
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later recommended)
+- pnpm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+pnpm dev
+
+# Builds website output on dist folder
+pnpm build
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
-
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
-
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
